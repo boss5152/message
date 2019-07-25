@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>新增</title>
+        <script type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    </head>
+    <style type="text/css">
+        #content{
+            height: 300px;
+        }
+    </style>
+    <body onload="showTips()">
+        <div class="container">
+            <h2>新增文章<h2>
+            <hr>
+            <form action="add.php" method="post" name="add">
+                <div class="form-group">
+                    <label for="title">標題</label>
+                    <textarea
+                        type="text" class="form-control" name="title" id="title" 
+                        placeholder="中英數上限10字" 
+                        oninput="checkArtLength()"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="content">內容</label>
+                    <textarea 
+                        type="textarea" class="form-control" 
+                        name="content" id="content" placeholder="中英數上限100字" 
+                        oninput="checkArtLength()"></textarea>
+                </div>
+                <div class="form-group">       
+                    <button class="btn btn-primary offset-sm-4" id="addArt">完成</button>
+                    <a href="index.php" class="btn btn-danger offset-sm-3" role="button">取消</a>
+                </div>
+            </form>
+        </div>
+        <div>
+            <input id="tips" type="hidden" value="{{$tips}}">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"/>
+        <title>編輯</title>
+        <script type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        #content{
+            height: 300px;
+        }
+    </style>
+    <body onload="showTips()">
+        <div class="container col-sm-3">
+            <h2>編輯文章</h2>
+            <hr>
+            <form action="update.php" method="post">
+                <div class="form-group">
+                    <label for="title">標題 : </label>
+                    <input type="text" class="form-control" name="title" value="{{$title}}">
+                </div>
+                <div class="form-group">
+                    <label for="content">內容 : </label>
+                    <textarea type="content" class="form-control" name="content" id="content">{{$content}}</textarea>
+                    <input type="hidden" name="article_id" value="{{$article_id}}">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary offset-sm-3">確定</button>
+                    <a href="index.php" class="btn btn-danger offset-sm-2" role="button">取消</a>
+                </div>
+            </form>
+        </div>
+        <div>
+            <input id="tips" type="hidden" value="{{$tips}}">
+        </div>
+    </body>
+</html

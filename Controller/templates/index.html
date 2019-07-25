@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>留言板</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    </head>
+        <style>
+            th{
+                text-align: center;
+            }
+            td{
+                text-align: center;
+            }
+            .col-fixed-title {
+                width: 120px;
+            }
+            .col-fixed-content {
+                width: 450px;
+            }
+            .col-fixed-user {
+                width: 10%;
+            }
+            .col-fixed-date {
+                width: 17%;
+            }
+            .col-fixed-view {
+                width: 13%;
+            }
+            #title{
+                width: 120px;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+            }
+            #content{
+                width: 450px;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+            }
+        </style>
+    <body onload="showTips()">
+        <p></p>
+        <div class="container">
+            <h2>留言板</h2>       
+                <table class="table table-hover table-primary">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="col-fixed-title">標題</th>
+                            <th class="col-fixed-content">內容</th>
+                            <th>發文者</th>
+                            <th>發表時間</th>
+                            <th class="col-fixed-view">瀏覽</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        {{foreach $array_title as $key => $value}}
+                        <tr>
+                            <td>
+                                <div id="title">
+                                    {{$array_title[$key]}}
+                                </div>
+                            </td>
+                            <td>
+                                <div id="content">
+                                    {{$array_content[$key]}}
+                                </div>
+                            </td>
+                            <td>
+                                {{$array_nickname[$key]}}
+                            </td>
+                            <td>
+                                {{$array_create_date[$key]}}
+                            </td>
+                            <td>
+                                <a href="article.php?id={{$array_article_id[$key]}}" class="btn btn-info col-md-7" role="button">瀏覽</a>
+                            </td>
+                        </tr>
+                        {{/foreach}}
+                    </tbody>
+            </table>
+        </div>
+        <div>
+            <input id="tips" type="hidden" value="{{$tips}}">
+        </div>
+    </body>
+</html>

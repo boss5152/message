@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>新增</title>
+        <script type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">        
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    </head>
+    <style type="text/css" >
+        #art_content{
+            height: 300px;
+        }
+        table{
+            word-break: break-all;
+        }
+    </style>
+    <body onload="showTips()">
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td class="table-active">標題</td>
+                </tr>
+                <tr>
+                    <td>{{$title}}</td>
+                </tr>
+                <tr>
+                    <td class="table-active">內容</td>
+                </tr>
+                <tr>
+                    <td id="art_content">{{$content}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        {{if isset($nickname) }}
+            <a href="msg_add.php?id={{$article_id}}" class="btn btn-success col-sm-0.5" role="button">回覆</a>
+            {{if $article_user_id == $user_id}}
+                <a href="update.php?id={{$article_id}}" class="btn btn-success col-sm-0.5" role="button">編輯</a>
+                <a href="delete.php?id={{$article_id}}" class="btn btn-danger col-sm-0.5" role="button">刪除</a>
+            {{/if}}
+        {{/if}}
+
+    </div>
+    <hr>
+    <div class="container">
+        <div>
+            {{foreach $array_msg_name as $key => $value}}
+                <tr>
+                    <td>
+                        留言者 : {{$array_msg_name[$key]}} <br>
+                    </td>
+                    <td>
+                        內容 : {{$array_msg_content[$key]}} <br>
+                    </td>
+                    <td>
+                        留言時間 : {{$array_msg_date[$key]}} <br>
+                    </td>
+                    {{if isset($nickname) && $array_user_id[$key] == $user_id}}
+                        <a href="msg_update.php?id={{$array_msg_id[$key]}}" class="btn btn-primary col-sm-0.5" role="button">編輯</a>
+                        <a href="msg_delete.php?id={{$array_msg_id[$key]}}" class="btn btn-danger col-sm-0.5" role="button" onclick="deleteMsg()">刪除</a>
+                    {{/if}}
+                </tr>
+                <hr>
+            {{/foreach}}
+    </div>
+    <div>
+        <input id="tips" type="hidden" value="{{$tips}}">
+    </div>
+</body>
+</html>
