@@ -7,7 +7,7 @@ $useTool->checkLogin();
 
 if (!empty($_POST)) {
     //檢查是否有空
-    if (!empty($_POST["title"])&&(!empty($_POST["content"]))) {
+    if (!empty($_POST["title"]) && (!empty($_POST["content"]))) {
         //檢查長度
         $title = $_POST["title"];
         $content = $_POST['content'];
@@ -18,8 +18,8 @@ if (!empty($_POST)) {
         } elseif ($tips == '') {
             //修改
             $article_id = $_POST['article_id'];
-            $title = htmlentities($title,ENT_NOQUOTES,"UTF-8");
-            $content = htmlentities($content,ENT_NOQUOTES,"UTF-8");
+            $title = htmlentities($title, ENT_NOQUOTES, "UTF-8");
+            $content = htmlentities($content, ENT_NOQUOTES, "UTF-8");
 
             $array = [
                 'title' => $title,
@@ -27,7 +27,10 @@ if (!empty($_POST)) {
             ];
 
             $user = new Article();
-            $user->update($array,$article_id);
+            $user->update($array, $article_id);
+
+            $tips = "文章編輯成功";
+            setcookie("tips", $tips, time()+3600);
             header("Location: index.php");
         }
     } else {

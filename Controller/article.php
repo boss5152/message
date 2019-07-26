@@ -3,10 +3,9 @@
 require_once('tool.php');
 
 $article_id = $_GET['id'];
-if (isset($_COOKIE['tips'])) {
-    $tips = $_COOKIE['tips'];
-    setcookie("tips", "", time()-3600);
-}
+
+$useTool = new Tool();
+$tips = $useTool->getTips();
 
 $user = new Article();
 $array = [
@@ -44,15 +43,16 @@ foreach ($array as $k => $v) {
 $user = new Article();
 $result = $user->show_msg($article_id);
 
-$array_msg_name = $array_msg_content = $array_msg_date = $array_msg_id = $array_user_id = [];
+$array_msg_name = $array_msg_content = 
+$array_msg_date = $array_msg_id = $array_user_id = [];
 
 // 拆成單一陣列
 foreach ($result as $array_single) {
-    array_push($array_msg_name,$array_single['msg_name']);
-    array_push($array_msg_content,$array_single['msg_content']);
-    array_push($array_msg_date,$array_single['msg_date']);
-    array_push($array_msg_id,$array_single['msg_id']);
-    array_push($array_user_id,$array_single['user_id']);
+    array_push($array_msg_name, $array_single['msg_name']);
+    array_push($array_msg_content, $array_single['msg_content']);
+    array_push($array_msg_date, $array_single['msg_date']);
+    array_push($array_msg_id, $array_single['msg_id']);
+    array_push($array_user_id, $array_single['user_id']);
 }
 //Smarty
 $array = [

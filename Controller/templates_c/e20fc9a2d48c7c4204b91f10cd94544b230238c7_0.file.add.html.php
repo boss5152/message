@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-25 11:43:56
+/* Smarty version 3.1.33, created on 2019-07-26 08:14:24
   from 'C:\xampp\htdocs\msg\Controller\templates\add.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d3979dc6fb793_33235128',
+  'unifunc' => 'content_5d3a9a407c9989_93049094',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e20fc9a2d48c7c4204b91f10cd94544b230238c7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\msg\\Controller\\templates\\add.html',
-      1 => 1564046807,
+      1 => 1564121564,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d3979dc6fb793_33235128 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d3a9a407c9989_93049094 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +29,7 @@ function content_5d3979dc6fb793_33235128 (Smarty_Internal_Template $_smarty_tpl)
         <?php echo '<script'; ?>
  type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"><?php echo '</script'; ?>
 >
-        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
         <?php echo '<script'; ?>
  src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -37,7 +37,7 @@ function content_5d3979dc6fb793_33235128 (Smarty_Internal_Template $_smarty_tpl)
  src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     </head>
     <style type="text/css">
@@ -45,7 +45,7 @@ function content_5d3979dc6fb793_33235128 (Smarty_Internal_Template $_smarty_tpl)
             height: 300px;
         }
     </style>
-    <body onload="showTips()">
+    <body>
         <div class="container">
             <h2>新增文章<h2>
             <hr>

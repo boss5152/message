@@ -3,30 +3,32 @@
     <head> 
         <meta charset="UTF-8"/>
         <title>登入</title>
-        <script type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"></script>
-        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script type="text/javascript" src="http://localhost/msg/Controller/javascript/tool.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
-        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
-    <body onload="showTips()">
-        <div class="container col-sm-3">
-            <h2>登入</h2>
-            <hr>
-            <form action="login.php" method="post">
-                <div class="form-group">
-                    <label for="account">帳號 : </label>
-                    <input type="text" class="form-control" name="account" id="account">
-                </div>
-                <div class="form-group">
-                    <label for="password">密碼 : </label>
-                    <input type="password" class="form-control" name="password" name="password">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary offset-sm-3" id="login">登入</button>
-                    <a href="index.php" class="btn btn-danger offset-sm-2" role="button">取消</a>
-                </div>
-            </form>
+    <body>
+        <div class="container">
+            <div class="col-md-5 col-md-offset-3">
+                <h2>登入</h2>
+                <hr>
+                    <div class="form-group">
+                        <label>帳號 : </label>
+                        <input type="text" value='521' class="form-control" name="account" id="account" placeholder="英數2碼以上12碼以下">
+                        <p id="msgAccount"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>密碼 : </label>
+                        <input type="password" value='521' class="form-control" name="password" id="password" placeholder="英數2碼以上12碼以下">
+                        <p id="msgPassword"></p>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary offset-sm-3" id="btnLogin">登入</button>
+                        <a href="index.php" class="btn btn-danger offset-sm-2" role="button">取消</a>
+                    </div>
+            </div>
         </div>
         <div>                    
             <input id="tips" type="hidden" value="{{$tips}}">

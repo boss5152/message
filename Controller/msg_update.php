@@ -20,18 +20,19 @@ if (!empty($_POST)) {
         ];
 
         $user = new Message();
-        $user->update($array,$msg_id);
+        $user->update($array, $msg_id);
 
         //返回留言對應之文章用
         $user = new Message();
         $row_result = $user->getAll($array);
 
+        //給使用者訊息
+        $tips = "留言編輯成功";
+        setcookie("tips", $tips, time()+3600);
+
         header("Location: article.php?id=$row_result[article_id]");
+        exit;
     }
-
-    $smarty->assign("tips", $tips);
-    $smarty->display("msg_add.html");
-
 
 } else {
     //顯示
@@ -57,9 +58,10 @@ if (!empty($_POST)) {
     $msg_content = $row_result['msg_content'];
     $msg_id = $row_result['msg_id'];
 
-    $smarty->assign("msg_content",$msg_content);
-    $smarty->assign("msg_id",$msg_id);
-    $smarty->assign("tips",$tips);
+    $smarty->assign("msg_content", $msg_content);
+    $smarty->assign("msg_id", $msg_id);
 
-    $smarty->display("msg_update.html"); 
 }
+
+$smarty->assign("tips", $tips);
+$smarty->display("msg_update.html"); 

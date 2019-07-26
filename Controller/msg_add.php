@@ -24,6 +24,8 @@ if (!empty($_POST)) {
     
         $user = new Message();
         $user->insert($array);
+        $tips = "新增留言成功";
+        $useTool->setTips($tips);
     
         header("Location: article.php?id=$article_id");
     }

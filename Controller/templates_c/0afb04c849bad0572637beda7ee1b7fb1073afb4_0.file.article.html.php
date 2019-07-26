@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-25 12:04:29
+/* Smarty version 3.1.33, created on 2019-07-26 11:35:13
   from 'C:\xampp\htdocs\msg\Controller\templates\article.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d397eadb18e90_73142260',
+  'unifunc' => 'content_5d3ac95178a5c5_78396188',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0afb04c849bad0572637beda7ee1b7fb1073afb4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\msg\\Controller\\templates\\article.html',
-      1 => 1564049064,
+      1 => 1564125607,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d397eadb18e90_73142260 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d3ac95178a5c5_78396188 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="UTF-8"/>
         <title>新增</title>
         <?php echo '<script'; ?>
- type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"><?php echo '</script'; ?>
+ type="text/javascript" src="http://localhost/msg/Controller/javascript/tool.js"><?php echo '</script'; ?>
 >
-        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">        
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/css/bootstrap.min.css">        
         <?php echo '<script'; ?>
  src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -36,7 +36,7 @@ function content_5d397eadb18e90_73142260 (Smarty_Internal_Template $_smarty_tpl)
  src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     </head>
     <style type="text/css" >
@@ -47,7 +47,7 @@ function content_5d397eadb18e90_73142260 (Smarty_Internal_Template $_smarty_tpl)
             word-break: break-all;
         }
     </style>
-    <body onload="showTips()">
+    <body>
     <p></p>
     <div class="container">
         <div class="row">

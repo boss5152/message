@@ -2,17 +2,17 @@
     <head>
         <meta charset="UTF-8"/>
         <title>新增</title>
-        <script type="text/javascript" src="http://localhost/msg/Controller/templates/tool.js"></script>
-        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script type="text/javascript" src="http://localhost/msg/Controller/javascript/tool.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
-        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
-    <body onload="showTips()">
+    <body>
         <div class="container">
             <form action="msg_add.php" method="post" name="formAdd" >
             <div class="form-group">
-                <label for="content">內容 : </label>
+                <label for="content">留言內容 : </label>
                 <textarea class="form-control" rows="5" name="msg_content" id="msg_content" placeholder="中英數上限15字" oninput="checkMsgLength()"></textarea>
             </div>
                 <input type="hidden" name="article_id" value="{{$article_id}}">
