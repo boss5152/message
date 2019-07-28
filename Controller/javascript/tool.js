@@ -7,6 +7,7 @@
 // })
 
 //註冊登入檢驗-------------
+
 $(document).ready(function(){
     //暱稱
     $("#nickname").keyup(function(){
@@ -46,7 +47,7 @@ function correctNickname(){
 //帳號驗證
 //沒過
 function errorAccount(){
-    $("#msgAccount").html("暱稱需介於一到五字且不可有空白等特殊字元");
+    $("#msgAccount").html("帳號需介於2到12字且不可有空白等特殊字元");
     $("#btnRegister").attr('disabled', true);
     $("#btnLogin").attr('disabled', true);
 }
@@ -56,6 +57,21 @@ function correctAccount(){
     $("#btnRegister").attr('disabled', false);
     $("#btnLogin").attr('disabled', false);
 }
+
+//密碼驗證
+//沒過
+function errorPassword(){
+    $("#msgPassword").html("密碼需介於2到12字且不可有空白等特殊字元");
+    $("#btnRegister").attr('disabled', true);
+    $("#btnLogin").attr('disabled', true);
+}
+//有過
+function correctPassword(){
+    $("#msgPassword").html("");
+    $("#btnRegister").attr('disabled', false);
+    $("#btnLogin").attr('disabled', false);
+}
+
 
 //驗證結束-------------
 
@@ -68,15 +84,18 @@ $(document).ready(function() {
         $.ajax({
             type: "POST", //傳送方式
             url: "http://localhost/msg/Controller/login.php", //傳送目的地
+            dataType: "json", //資料格式
             data: { //傳送資料
-                "account": 123, //表單欄位 ID account
-                "password": 123 //表單欄位 ID password
+                'account': account, //表單欄位 ID account
+                'password': password //表單欄位 ID password
             },
             success: function(data) {
-                if (data){
-                    alert(data);
+                if (data === true){
+                    console.log(data);
+                    alert(data.isLogin);
                 } else {
-                    alert("789");
+                    console.log(data);
+                    alert(data.isLogin);
                 }
                 
             },
@@ -87,19 +106,7 @@ $(document).ready(function() {
     })        
 });
 
-//密碼驗證
-//沒過
-function errorPassword(){
-    $("#msgPassword").html("暱稱需介於一到五字且不可有空白等特殊字元");
-    $("#btnRegister").attr('disabled', true);
-    $("#btnLogin").attr('disabled', true);
-}
-//有過
-function correctPassword(){
-    $("#msgPassword").html("");
-    $("#btnRegister").attr('disabled', false);
-    $("#btnLogin").attr('disabled', false);
-}
+
 
 
 
